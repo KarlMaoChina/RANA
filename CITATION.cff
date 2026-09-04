@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "RANA: Reference-Anchored Neural Anatomy"
+message: If you use this software, please cite the accompanying paper.
+type: software
+authors:
+  - name: "RANA authors"
+repository-code: "https://github.com/karlmaochina/RANA"
+license: Apache-2.0
+version: "1.0.0"
+date-released: "2026-09-05"

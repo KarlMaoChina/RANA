@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rana-seg"
+version = "1.0.0"
+description = "Reference-Anchored Neural Anatomy for pathological gallbladder segmentation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "RANA authors"}]
+dependencies = [
+  "numpy",
+  "scipy",
+  "nibabel",
+  "torch",
+]
+
+[tool.setuptools.packages.find]
+include = ["rana*"]
