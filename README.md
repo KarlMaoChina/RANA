@@ -155,19 +155,11 @@ python scripts/predict.py \
 
 ## Citation
 
-If you find RANA useful in your research, please cite:
+If you find RANA useful in your research, please cite this repository:
 
 ```bibtex
-@article{rana2026,
-  title={{RANA: Reference-Anchored Neural Anatomy via Extrinsic Canonical Frames and Exact Affine Pullbacks for Pathological Gallbladder Segmentation on CT}},
-  author={Author One and Author Two and Corresponding Author},
-  journal={Computerized Medical Imaging and Graphics},
-  year={2026},
-  note={Under review}
-}
-
 @software{rana2026code,
-  author = {{RANA authors}},
+  author = {{RANA Authors}},
   title = {{RANA: Reference-Anchored Neural Anatomy}},
   year = {2026},
   url = {https://github.com/KarlMaoChina/RANA},
