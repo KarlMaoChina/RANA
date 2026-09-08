@@ -3,12 +3,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-3776AB.svg?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)](LICENSE)
 [![Framework](https://img.shields.io/badge/built%20on-nnU--Net%20v2-orange.svg?style=flat-square)](https://github.com/MIC-DKFZ/nnUNet)
-[![Universe](https://img.shields.io/badge/universe-MyGO%21%21%21%21%21-e05a8f.svg?style=flat-square)](https://anime.bang-dream.com/mygo/)
-
-> *"迷子でもいい、迷子でも進め。"*  
-> *(Even when lost, keep moving forward.)*
->
-> Official repository for **RANA: Reference-Anchored Neural Anatomy via Extrinsic Canonical Frames and Exact Affine Pullbacks for Pathological Gallbladder Segmentation on CT**.
+> Official repository for **RANA: Extrinsic Canonical Coordinate Conditioning for Pathological Gallbladder Segmentation on Computed Tomography** (Reference-Anchored Neural Anatomy).
 
 ---
 
@@ -25,9 +20,9 @@ $$\gamma(\mathbf{x}) = \left[ \frac{\text{SDF}_\Pi(\mathbf{x})}{L_0}, \frac{t_1(
 
 ### Key Highlights
 
-- **Exact Affine Pullbacks:** Spatial data augmentations (rotations, anisotropic scaling, shearing) transform the coordinate channels in **exact closed form**. Coordinates are regenerated directly on the augmented grid without 3D volume resampling, eliminating interpolation blur and preserving zero-divergence geometry.
+- **Exact Affine Pullbacks:** Spatial data augmentations (3D rotation, anisotropic scaling, reflection) transform the coordinate channels in **exact closed form**. Coordinates are regenerated directly on the augmented grid without 3D volume resampling, eliminating interpolation blur and preserving zero-divergence geometry.
 - **Minimal Capacity Overhead:** Extends nnU-Net's first convolutional layer from 1 to 5 input channels—adding merely **3,456 weights** to a 101.9M-parameter residual encoder backbone (<0.003% increase).
-- **Strong Clinical & Zero-Shot Transfer:** Evaluated across 719 multicenter CT series (+0.033 mean Dice over nnU-Net ResEnc) with zero-shot domain transfer to public organ benchmarks (AMOS22 median Dice 0.922, WORD median Dice 0.838).
+- **Strong Clinical & Zero-Shot Transfer:** Evaluated across 721 multicenter and public CT series (+0.0331 internal cross-validation Dice over nnU-Net ResEnc) with zero-shot domain transfer to public organ benchmarks (AMOS22 median Dice 0.9216, WORD median Dice 0.8381).
 - **Reference-Free Quality Assurance:** Spatial disagreement across independent training seeds serves as an unsupervised detector for difficult segmentations (AUC 0.79–0.84).
 
 ---
@@ -120,7 +115,7 @@ nnUNetv2_train DatasetXXX_Name 3d_fullres 0 -p nnUNetResEncUNetMPlans -tr nnUNet
 ```
 
 #### Coordinate Ablations
-To evaluate the contribution of individual coordinate channels, run the corresponding ablation trainers (matching Table 5 in the paper):
+To evaluate the contribution of individual coordinate channels, run the corresponding ablation trainers (matching Table 3 in the paper):
 
 | Trainer Name | Active Channels | Description |
 |---|---|---|
